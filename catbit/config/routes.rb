@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  namespace :user do
+  get 'login/index'
+  end
+
+  namespace :user do
+  get 'registration/index'
+  end
+
   resources :steps
 
   resources :profiles
@@ -7,7 +15,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'user/login#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
