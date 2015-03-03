@@ -43,3 +43,5 @@ group :development, :test do
   gem 'spring'
 end
 
+#Use Fitgem to retrieve data
+gem 'fitgem'

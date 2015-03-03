@@ -57,3 +57,4 @@ end
 # Add Fitgem API calls on the client object below this line
  
 pp client.activities_on_date 'today'
+info = client.user_info['user']
