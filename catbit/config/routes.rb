@@ -1,21 +1,22 @@
 Rails.application.routes.draw do
-  namespace :user do
-  get 'login/index'
-  end
 
-  namespace :user do
-  get 'registration/index'
-  end
+  
 
-  resources :steps
+# You can have the root of your site routed with "root"  
+  root 'welcome#index'
+  
+  get	 'signup'  => 'users#new' 
+  get    'login'   => 'sessions#new'
+  post   'login'   => 'sessions#create'
+  delete 'logout'  => 'sessions#destroy'
+      
+  resources :users
+  #resources :steps
 
-  resources :profiles
+  #resources :profiles
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  root 'user/login#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
