@@ -6,8 +6,6 @@ html,
 body {
 	padding: 0;
 	margin: 0 auto;
-
-
 	background-color:white;
 
 	//background-image: image-url('background1.jpg');
@@ -16,10 +14,11 @@ body {
 }
 
 div.regwidth{
+
 	background-color: #5A6794;
 	text-align:center;
 	margin: 20px;
-	width:700px;
+	width:1000px;
 }
 
 div#centered {
@@ -36,10 +35,11 @@ div#centered {
   transform: translate(-50%, -50%);
 }
 
-h1{
-
+h1#welcome{
+	color:black;
+	font-family:arial;
 	position:relative;
-	font-size:70px;
+	font-size:60px;
 	margin: 30px 30px 30px 30px;
 }
 
@@ -58,13 +58,14 @@ h1{
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
-	font-family:arial;
+	font-family:arial;	
 	font-size:13px;
 	font-weight:bold;
 	padding:6px 12px;
 	text-decoration:none;
 
 	margin:30px;
+	width:70%;
 }
 
 .button:active { //this is not displaying in the phone
@@ -72,20 +73,47 @@ h1{
 	top:1px;
 }
 
-a{
-	color:#ffffff;
+div#centered a{
+	color:white;
 	font-family:arial;
-	font-size:60px;
+	font-size:25px;
 	font-weight:bold;
 	padding:6px 12px;
 	text-decoration:none;
-} 
+}
+
+div#centered a.hover{
+	color: transparent;
+}
 
 div#logo{
 	display:inline;
+	width:40px;
+	margin:0px;
 }
         
 
 .alert, .notice {
 	display:none;
 }
+
+
+
+
+
+@media screen and (max-width:1000px) {
+	div.regwidth{
+		width:750px;
+	}
+}
+
+@media screen and (max-width:750px) {
+	div.regwidth{
+		width:500px;
+	}
+}
+
+
+
+
+
