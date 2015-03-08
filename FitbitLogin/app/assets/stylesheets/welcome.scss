@@ -1,3 +1,91 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+
+
+	background-color:white;
+
+	//background-image: image-url('background1.jpg');
+	//background-size: 100%;
+
+}
+
+div.regwidth{
+	background-color: #5A6794;
+	text-align:center;
+	margin: 20px;
+	width:700px;
+}
+
+div#centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h1{
+
+	position:relative;
+	font-size:70px;
+	margin: 30px 30px 30px 30px;
+}
+
+.button {
+	-moz-box-shadow:inset 0px 1px 0px 0px #7a8eb9;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #7a8eb9;
+	box-shadow:inset 0px 1px 0px 0px #7a8eb9;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #637aad), color-stop(1, #5972a7));
+	background:-moz-linear-gradient(top, #637aad 5%, #5972a7 100%);
+	background:-webkit-linear-gradient(top, #637aad 5%, #5972a7 100%);
+	background:-o-linear-gradient(top, #637aad 5%, #5972a7 100%);
+	background:-ms-linear-gradient(top, #637aad 5%, #5972a7 100%);
+	background:linear-gradient(to bottom, #637aad 5%, #5972a7 100%);
+	background-color:#637aad;
+	border:1px solid #314179;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:6px 12px;
+	text-decoration:none;
+
+	margin:30px;
+}
+
+.button:active { //this is not displaying in the phone
+	position:relative;
+	top:1px;
+}
+
+a{
+	color:#ffffff;
+	font-family:arial;
+	font-size:60px;
+	font-weight:bold;
+	padding:6px 12px;
+	text-decoration:none;
+} 
+
+div#logo{
+	display:inline;
+}
+        
+
+.alert, .notice {
+	display:none;
+}
