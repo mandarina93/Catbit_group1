@@ -16,11 +16,9 @@ class User < ActiveRecord::Base
     current_user = where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid
-<<<<<<< HEAD
+
       #user.username = auth.info.nickname
-=======
-#      user.username = auth.info.nickname
->>>>>>> origin/master
+
       user.oauth_token = auth['credentials']['token']
       user.oauth_secret = auth['credentials']['secret']
       user.remember_me = true
