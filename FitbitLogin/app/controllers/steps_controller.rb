@@ -4,7 +4,9 @@ class StepsController < ApplicationController
   # GET /steps
   # GET /steps.json
   def index
-    @steps = Step.all
+    #@steps = Step.all
+    @name ="JANE"
+    @steps = "2675"
   end
 
   # GET /steps/1
