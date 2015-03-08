@@ -1,3 +1,3 @@
 class Step < ActiveRecord::Base
-	belongs_to :users
+	belongs_to :dashboards
 end

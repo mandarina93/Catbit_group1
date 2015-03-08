@@ -19,54 +19,50 @@
 <body>
 
 <header>
- 
+<!--
+	<div id="menuButton">
+		<nav>
+			<a href="#" id="menu-icon"></a>
+		<ul>
+			<li><a href="#" class="current">Home</a></li>
+			<li><a href="#">Profile</a></li>
+			<li><a href="#">Challenge</a></li>
+		</ul>
+		</nav>
+	</div>
+-->
 
-<div id="menuButton">
-<nav>
-
-<a href="#" id="menu-icon"></a>
-
-<ul>
-
-<li><a href="#" class="current">Home</a></li>
-<li><a href="#">Profile</a></li>
-<li><a href="#">Challenge</a></li>
-
-</ul>
-
-</nav>
+<div id="userName">
+	<% name=@name %>
+		<div id="logo">
+			<%= name %>
+		</div>
 </div>
-  
-   <div id="userName">
-    <% name=@name %>
-    <div id="logo">
-<%= name %>
-    </div>
 
-  </div>
-  <div id="shareButton">
-    <img class="icon" src="http://support.start.me/hc/en-us/article_attachments/200047032/share.png"/>
-  </div>
+<div id="shareButton">
+	<img class="icon" src="http://support.start.me/hc/en-us/article_attachments/200047032/share.png"/>
+</div>
+
 </header>
 
 <section>
+<center>
+	<h1>STEPS</h1>
+	<% steps=@steps %>
 
+	<%= "Today: "+ steps %>
 
-<h1>STEPS</h1>
-<% steps=@steps %>
+	<br><br><br><br>
 
-<%= "Today: "+ steps %>
-
-<br><br><br><br>
-<h2>History</h2>
-<br>
-<img src="http://quantifiedself.com/wp-content/uploads/2013/01/Bastian_FuelBand_vs_Fitbit2.png"/>
-
-
-
-
-
+	<h2>History</h2>
+	<br>
+	<img src="http://quantifiedself.com/wp-content/uploads/2013/01/Bastian_FuelBand_vs_Fitbit2.png"/>
 </section>
+</center>
+
+<center>
+<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+</center>
 
 </body>
 
