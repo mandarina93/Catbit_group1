@@ -13,6 +13,78 @@ body {
 	color: #555;
 }
 
+
+
+
+
+header {
+	background: #db5b43;
+	width: 100%;
+	height: 76px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+}
+
+div#menuicon{
+	float:left;
+	margin-top:15px;
+	width: 50px;
+	
+}
+
+ul.topnav li{
+	display:none;
+	list-style-type:none;
+	float:left;
+}
+
+div#userName{
+  margin-top:15px;
+  text-align:center;
+  line-height: 37px;
+  color: #FFF;
+}
+
+div#logo{
+	margin: 20px;
+	height: 40px;
+	font-size: 40px;
+}
+
+div#menuicon:hover ul li {
+	display:block;
+	margin:0;
+	padding: 15px 0 30px 0;
+	width:200px;
+
+	background-color: #efefef;
+	
+}
+
+div#signout{
+	margin:15px 10px 0 0;
+	display:block;
+	float:right;
+	width: 35px;
+
+	position: relative;
+    top: -60px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 a {
 
 	color: #4C9CF1;
@@ -38,30 +110,6 @@ img.icon{
   width: 40px;
 }
 
-header {
-
-	background: #db5b43;
-	width: 100%;
-	height: 76px;
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 100;
-
-}
-
-#menuButton{
-  width: 20%;
-  float: left;
-  
-}
-#userName{
-  width: 60%;
-  text-align:center;
-  line-height: 37px;
-  color: #FFF;
-}
-
 #shareButton{
   width: 20%;
   float: right;
@@ -69,53 +117,14 @@ header {
   margin-top: 15px;
 }
 
+/*
 nav {
 
 	float: left;
 	padding: 20px;	
 
 }
-#logo{
-
-	margin: 20px;
-	float: left;
-	width: 20%;
-	height: 40px;
-	background: url(../img/logo.png) no-repeat center;
-	display: block;
-  font-size: 40px;
-
-}
-
-#menu-icon {
-
-	display: hidden;
-	width: 40px;
-	height: 40px;
-	background: #FFFFFF url(../image/menu-icon.png) center;
-
-}
-
-a:hover#menu-icon {
-
-	background-color: #444;
-	border-radius: 4px 4px 0 0;
-
-}
-
-ul {
-
-	list-style: none;
-
-}
-
-li {
-
-	display: inline-block;
-	float: left;
-	padding: 10px
-
-}
+*/
 
 
 .current {
@@ -161,11 +170,10 @@ p {
 
 	}
 
-	#menu-icon {
 
-		display:inline-block;
 
-	}
+
+/*
 
 	nav ul, nav:active ul { 
 
@@ -195,4 +203,6 @@ p {
 		display: block;
 
 	}
+*/
+
 }
