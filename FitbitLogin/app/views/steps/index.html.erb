@@ -11,6 +11,7 @@
 		<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
 
 		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 
 		<!--[if IE]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
@@ -23,14 +24,33 @@
 		<section>
 			<center>
 				<h1>STEPS</h1>
-				<% steps=@steps %>
+			
 				<p class="numBig">
-					<%= steps %>
+					<%= @stepsDaily %>
 				</p>
 
 				<h2>History</h2>
+
+				<table class="pure-table">
+  					<thead>
+  						<tr>
+    						<th>Date</th>
+   						 	<th>Steps</th>
+   						 	<th>Completion</th>
+  						</tr>
+ 					</thead>
+
+ 					<tbody>
+  				 	<% @stepsHistory.each do |s| %>
+    					<tr>
+      						<td><%= s.stepDate %></td>
+      						<td><%= s.stepAmount %></td>
+      						<td>100%</td>
+    					</tr>
+ 				 	<% end %>
+ 				    </tbody>
+				</table>
 				<br>
-				
 			</center>
 		</section>
 

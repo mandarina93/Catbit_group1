@@ -6,7 +6,8 @@ class StepsController < ApplicationController
   def index
     #@steps = Step.all
     @name ="JANE"
-    @steps = "2675"
+    @stepsDaily = "2675"
+    @stepsHistory = Step.all
   end
 
   # GET /steps/1
