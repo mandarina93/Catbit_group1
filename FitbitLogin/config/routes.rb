@@ -1,11 +1,19 @@
 Rails.application.routes.draw do
 
+  get 'sessions/new'
+
+  post 'sessions/create'
+
+  delete 'sessions/destroy'
+
   resources :steps
 
   get 'dashboard/index'
 
-  
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks'}
+  get '/auth/:fitbit/callback', to: 'sessions#fitbit'
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

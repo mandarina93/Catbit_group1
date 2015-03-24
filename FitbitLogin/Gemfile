@@ -44,6 +44,5 @@ group :development, :test do
 end
 
 gem 'fitgem'
-gem 'devise'
 gem 'omniauth'
 gem 'omniauth-fitbit'

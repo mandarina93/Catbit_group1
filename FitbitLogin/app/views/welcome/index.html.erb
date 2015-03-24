@@ -5,14 +5,11 @@
 	<h1 id="welcome">Catbit welcomes you</h1>
 
 	<div class="button">
-		<%= link_to "Log in", new_user_session_path %><br/>
-	</div>	<br>
-	<div class="button">
 		<div id="logo">
 			<%= image_tag "fitbit-logo.png" , size: "40"%>
 		</div>
 		
-		<%= link_to "Login with Fitbit", user_omniauth_authorize_path(:fitbit) %>
+		<%= link_to "Login with Fitbit", '/auth/fitbit' %>
 	</div>
 </div>
 

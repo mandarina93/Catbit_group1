@@ -5,6 +5,19 @@ class StepsController < ApplicationController
   # GET /steps.json
   def index
     #@steps = Step.all
+	consumerKey = Rails.configuration.Consumer_Key
+    consumerSecret = Rails.configuration.Consumer_Secret
+	#get values from table in users
+	#auth_token = current_user.oauthToken
+	#auth_secret = current_user.oauthSecret
+	
+	#client = Fitgem::Client.new(
+	#:consumer_key => consumerKey, 
+	#:consumer_secret => consumerSecret,
+	#:token => auth_token,
+	#:secret => auth_secret)
+	
+	#@user_information = client.user_info('user') 
     @name ="JANE"
     @stepsDaily = "2675"
     @stepsHistory = Step.all
@@ -13,6 +26,10 @@ class StepsController < ApplicationController
   # GET /steps/1
   # GET /steps/1.json
   def show
+	
+	 
+  
+	#@step = user_information
   end
 
   # GET /steps/new
