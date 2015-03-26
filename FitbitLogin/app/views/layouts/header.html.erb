@@ -1,0 +1,29 @@
+<header> <!--Find my css stylesheet under app>assets>stylesheets>steps.scss-->
+
+	
+	<div id="side-menu">
+		<div id="menuicon">
+
+			<%= image_tag "menu.png" %>
+			<ul class="topnav">
+					<li>Home</li> <br>
+					<li>Profile</li> <br>
+					<li>Goals</li> <br>
+			</ul>
+
+		</div>
+	</div>
+
+	<div id="userName">
+		<% name=@name %>
+			<div id="logo">
+				<%= name %>
+			</div>
+	</div>
+
+	<div id="signout">
+		<%= link_to image_tag("signout.png"), sessions_destroy_path, :method => :delete  %>
+
+	</div>
+
+</header>
