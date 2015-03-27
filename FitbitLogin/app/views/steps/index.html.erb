@@ -4,7 +4,6 @@
 		<meta charset="utf-8">
 		<title>STEP</title>
 		<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
-
 		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 		<!--[if IE]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	</head>
@@ -17,7 +16,6 @@
 				<p class="numBig">
 					<%= @stepsDaily %>
 				</p>
-				
 				<h2>History</h2>
 				<table class="pure-table">
   					<thead>
@@ -33,7 +31,8 @@
     					<tr>
       						<td><%= s.stepDate %></td>
       						<td><%= s.stepAmount %></td>
-      						<td>100%</td>
+      						<td><%= (s.stepAmount/10000.0)*100 %> %</td>
+							<!--10000 can become goal when we that set up -->
     					</tr>
  				 	<% end %>
  				    </tbody>
