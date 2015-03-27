@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
     # sign_in_and_redirect user
 	session[:user_id] = user.id
 	
+	#throw user.inspect #- rails console is also a debugging option
 	redirect_to steps_path
   end
   

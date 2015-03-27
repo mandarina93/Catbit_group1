@@ -14,15 +14,15 @@
 ActiveRecord::Schema.define(version: 20150312221250) do
 
   create_table "steps", force: :cascade do |t|
-    t.datetime "stepDate"
+    t.date     "stepDate"
     t.integer  "stepAmount"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
-    t.string   "email"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "oauthToken"

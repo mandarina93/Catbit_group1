@@ -8,18 +8,18 @@ class StepsController < ApplicationController
 	consumerKey = Rails.configuration.Consumer_Key
     consumerSecret = Rails.configuration.Consumer_Secret
 	#get values from table in users
-	#auth_token = current_user.oauthToken
-	#auth_secret = current_user.oauthSecret
 	
-	#client = Fitgem::Client.new(
-	#:consumer_key => consumerKey, 
-	#:consumer_secret => consumerSecret,
-	#:token => auth_token,
-	#:secret => auth_secret)
+	auth_token = current_user.oauthToken
+	auth_secret = current_user.oauthSecret
 	
-	#@user_information = client.user_info('user') 
+	client = Fitgem::Client.new( :consumer_key => consumerKey, :consumer_secret => consumerSecret,
+	:token => auth_token, :secret => auth_secret)
+	
+	user_activities = client.activities_on_date 'today'
+	step = Step.step_data(user_activities["summary"], current_user.id)
+
     @name ="JANE"
-    @stepsDaily = "2675"
+    @stepsDaily = step.stepAmount
     @stepsHistory = Step.all
   end
 
