@@ -26,6 +26,14 @@ header {
 	left: 0;
 	z-index: 100;
 }
+article
+{
+	position:absolute;
+	top: 76px;
+	left:0;
+	width: 100%;
+}
+
 
 div#menuicon{
 	float:left;
@@ -68,7 +76,6 @@ div#signout{
 	display:block;
 	float:right;
 	width: 35px;
-
 	position: relative;
     top: -60px;
 }

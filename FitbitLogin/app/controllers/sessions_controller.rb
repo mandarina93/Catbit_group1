@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
 	session[:user_id] = user.id
 	
 	#throw user.inspect #- rails console is also a debugging option
-	redirect_to steps_path
+	redirect_to dashboard_index_path
   end
   
   def destroy

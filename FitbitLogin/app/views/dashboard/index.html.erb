@@ -1,4 +1,61 @@
-<h1>Dashboard#index</h1>
-<p>Find me in app/views/dashboard/index.html.erb</p>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,maximum-scale=1, user-scalable=no">
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+        <style>
+        img.fullscreen {
+            max-height: 100%;
+            max-width: 100%;
+        }       
+    </style>
+    </head>
+    <body>
 
+<%= render file:"/app/views/layouts/header.html" %>
+ <article>
+    <ul data-role="listview">
+        <li>
+            <%= link_to steps_path do%>
+            <h1>Steps</h1>
+            <%= image_tag "shoeprints.png" %>
+            <p>You have completed 54% of your steps goal!</p>
+            <% end %>
+        </li>
+        <li>
+            <a href="www.google.com">
+            <h1>Miles</h1>
+            <%= image_tag "location.png" %>
+            <p>You have completed 33% of your distance goal!</p>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+            <h1>Calories</h1>
+            <%= image_tag "flame.png" %>
+            <p>You have completed 56% of your Calories goal!</p>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+            <h1>Log workout</h1>
+            <%= image_tag "running.png" %>
+            <p></p>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+            <h1>Log weight</h1>
+            <%= image_tag "clipboard.png" %>
+            <p></p>
+            </a>
+        </li>
+    </ul>
+</article>
 
+    </body>
+</html>
