@@ -4,34 +4,23 @@ class StepsController < ApplicationController
   # GET /steps
   # GET /steps.json
   def index
-    #@steps = Step.all
-	consumerKey = Rails.configuration.Consumer_Key
-    consumerSecret = Rails.configuration.Consumer_Secret
-	#get values from table in users
-	auth_token = current_user.oauthToken
-	auth_secret = current_user.oauthSecret
-	
-	client = Fitgem::Client.new( :consumer_key => consumerKey, :consumer_secret => consumerSecret,
-	:token => auth_token, :secret => auth_secret)
-	
-	#todays information
-	user_activities = client.activities_on_date 'today'
-	step = Step.step_data(user_activities["summary"], current_user.id)
-	Step.refresh(current_user.id, client)
-	
-	@user_information = "dddd"#client.activity("steps")#activity_on_date_range(activity, '2015-03-25', 'today')
-    @name ="JANE"
-    @stepsDaily = step.stepAmount
-	#@complete = (step.stepAmount/10000)*100
-    @stepsHistory = Step.all
+    client = user_client
+	   #todays information
+	   user_activities = client.activities_on_date 'today'
+	   step = Step.step_data(user_activities["summary"], current_user.id)
+	   Step.refresh(current_user.id, client)
+
+	@name = current_user.name
+	@stepsDaily = step.stepAmount
+	@stepsHistory = Step.order(stepDate: :desc)
   end
 
   # GET /steps/1
   # GET /steps/1.json
   def show
-	
-	 
-  
+
+
+
 	#@step = user_information
   end
 
