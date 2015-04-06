@@ -9,9 +9,9 @@
 				
 				<h2>History</h2>
 				
-				<table class="pure-table">
+				<table class="pure-table" style ="text-align:center">
   					<thead>
-  						<tr>
+  						<tr align = "center">
     						<th>Date</th>
    						 	<th>Steps</th>
    						 	<th>Completion</th>
@@ -23,7 +23,7 @@
     					<tr>
       						<td><%= s.stepDate %></td>
       						<td><%= s.stepAmount %></td>
-      						<td><%= format("%.2f",(s.stepAmount/10000.0)*100).to_f %> %</td>
+      						<td><%= ((s.stepAmount/10000.0)*100).round %> %</td>
 							<!--10000 can become goal when we that set up -->
     					</tr>
  				 	<% end %>
