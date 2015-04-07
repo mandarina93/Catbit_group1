@@ -1,0 +1,30 @@
+<%= render file:"/app/views/layouts/header.html" %>
+<section>
+  <center>
+    <h1>DISTANCE</h1>
+    <p class="numBig">
+      <%= @distanceDaily %>
+    </p>
+    <h2>History</h2>
+    <table class="pure-table" style ="text-align:center">
+        <thead>
+          <tr align = "center">
+            <th>Date</th>
+            <th>Distance</th>
+            <th>Completion</th>
+          </tr>
+      </thead>
+      <tbody>
+          <% @distanceHistory.each do |d| %>
+          <tr>
+              <td><%= d.distanceDate.strftime("%-m/%-d") %></td>
+              <td><%= d.distanceAmount %></td>
+              <td><%= ((d.distanceAmount/3.0)*100).round %> %</td>
+          <!--3 miles can become goal when we that set up -->
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <br>  
+  </center>
+</section>

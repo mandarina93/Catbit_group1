@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :distances
+
+  resources :calories
+
   resources :goals
 
   get 'sessions/new'
@@ -20,6 +24,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

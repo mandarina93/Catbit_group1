@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  distanceAmount: 1
+  distanceDate: 2015-04-07
+
+two:
+  distanceAmount: 1
+  distanceDate: 2015-04-07

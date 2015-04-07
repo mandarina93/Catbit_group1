@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  calorieDate: 2015-04-07
+  calorieIn: 1
+  calorieOut: 1
+
+two:
+  calorieDate: 2015-04-07
+  calorieIn: 1
+  calorieOut: 1

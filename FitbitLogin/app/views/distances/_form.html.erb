@@ -1,0 +1,25 @@
+<%= form_for(@distance) do |f| %>
+  <% if @distance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@distance.errors.count, "error") %> prohibited this distance from being saved:</h2>
+
+      <ul>
+      <% @distance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :distanceAmount %><br>
+    <%= f.number_field :distanceAmount %>
+  </div>
+  <div class="field">
+    <%= f.label :distanceDate %><br>
+    <%= f.date_select :distanceDate %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
