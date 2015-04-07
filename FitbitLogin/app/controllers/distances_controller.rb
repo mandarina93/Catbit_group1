@@ -4,9 +4,15 @@ class DistancesController < ApplicationController
   # GET /distances
   # GET /distances.json
   def index
-  @name = current_user.name
-  @distanceDaily = "1.93 miles"
-  @distanceHistory = Distance.all
+	client = user_client
+	#todays information
+	user_activities = client.activities_on_date 'today'
+	distance = Distance.distance_data(user_activities["summary"], current_user.id)
+	Distance.refresh(current_user.id, client)
+
+	@name = current_user.name
+	@distanceDaily = distance.distanceAmount
+	@distanceHistory = Distance.order(distanceDate: :desc)
   end
 
   # GET /distances/1

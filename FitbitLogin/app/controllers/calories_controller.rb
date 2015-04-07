@@ -4,9 +4,15 @@ class CaloriesController < ApplicationController
   # GET /calories
   # GET /calories.json
   def index
+    client = user_client
+	#todays information
+	user_activities = client.activities_on_date 'today'
+	calorie = Calorie.calorie_data(user_activities["summary"], current_user.id)
+	Calorie.refresh(current_user.id, client)
+	
     @name = current_user.name
-    @caloriesDaily = "1273"
-    @caloriesHistory = Calory.all
+    @caloriesDaily = calorie.calorieOut
+    @caloriesHistory = Calorie.order(calorieDate: :desc)
   end
 
   # GET /calories/1

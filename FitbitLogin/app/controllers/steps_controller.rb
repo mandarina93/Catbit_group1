@@ -5,10 +5,10 @@ class StepsController < ApplicationController
   # GET /steps.json
   def index
     client = user_client
-	   #todays information
-	   user_activities = client.activities_on_date 'today'
-	   step = Step.step_data(user_activities["summary"], current_user.id)
-	   Step.refresh(current_user.id, client)
+	#todays information
+	user_activities = client.activities_on_date 'today'
+	step = Step.step_data(user_activities["summary"], current_user.id)
+	Step.refresh(current_user.id, client)
 
 	@name = current_user.name
 	@stepsDaily = step.stepAmount

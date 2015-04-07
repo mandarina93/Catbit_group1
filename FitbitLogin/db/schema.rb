@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20150407211316) do
     t.date     "calorieDate"
     t.integer  "calorieIn"
     t.integer  "calorieOut"
+    t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -24,6 +25,7 @@ ActiveRecord::Schema.define(version: 20150407211316) do
   create_table "distances", force: :cascade do |t|
     t.integer  "distanceAmount"
     t.date     "distanceDate"
+    t.integer  "user_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
