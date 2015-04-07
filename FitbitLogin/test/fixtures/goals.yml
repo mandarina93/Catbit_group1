@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  goalName: 1
+  timeFrame: 1
+  goalAmount: 1
+
+two:
+  goalName: 1
+  timeFrame: 1
+  goalAmount: 1

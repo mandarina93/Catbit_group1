@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :goals
+
   get 'sessions/new'
 
   post 'sessions/create'
