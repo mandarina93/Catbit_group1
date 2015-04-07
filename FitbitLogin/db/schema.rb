@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150312221250) do
+ActiveRecord::Schema.define(version: 20150407011557) do
+
+  create_table "goals", force: :cascade do |t|
+    t.integer  "goalName"
+    t.integer  "timeFrame"
+    t.integer  "goalAmount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "steps", force: :cascade do |t|
     t.date     "stepDate"

@@ -21,7 +21,7 @@
  					<tbody>
   				 	<% @stepsHistory.each do |s| %>
     					<tr>
-      						<td><%= s.stepDate %></td>
+      						<td><%= s.stepDate.strftime("%-m/%-d") %></td>
       						<td><%= s.stepAmount %></td>
       						<td><%= ((s.stepAmount/10000.0)*100).round %> %</td>
 							<!--10000 can become goal when we that set up -->
