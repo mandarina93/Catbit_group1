@@ -12,4 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require jquery-1.7.1.min
+//= require jquery.mobile-1.1.1.min
+//= require jquery-mobile-slide-menu
+
+
+
+
+// require_tree .
