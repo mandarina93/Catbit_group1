@@ -1,34 +1,30 @@
-		<%= render file:"/app/views/layouts/header.html" %>
-		<section>
-			<center>
-				<h1>STEPS</h1>
-				
-				<p class="numBig">
-					<%= @stepsDaily %>
-				</p>
-				
-				<h2>History</h2>
-				
-				<table class="pure-table" style ="text-align:center">
-  					<thead>
-  						<tr align = "center">
-    						<th>Date</th>
-   						 	<th>Steps</th>
-   						 	<th>Completion</th>
-  						</tr>
- 					</thead>
-
- 					<tbody>
-  				 	<% @stepsHistory.each do |s| %>
-    					<tr>
-      						<td><%= s.stepDate.strftime("%-m/%-d") %></td>
-      						<td><%= s.stepAmount %></td>
-      						<td><%= ((s.stepAmount/10000.0)*100).round %> %</td>
-							<!--10000 can become goal when we that set up -->
-    					</tr>
- 				 	<% end %>
- 				    </tbody>
-				</table>
-				<br>	
-			</center>
-		</section>
+<%= render file:"/app/views/layouts/header.html" %>
+<section>
+	<center>
+		<h1>STEPS</h1>
+		<p class="numBig">
+			<%= @stepsDaily %>
+		</p>
+		<h2>History</h2>
+		<table class="pure-table" style ="text-align:center">
+  			<thead>
+  				<tr align = "center">
+    				<th>Date</th>
+   					<th>Steps</th>
+   					<th>Completion</th>
+  				</tr>
+ 			</thead>
+ 			<tbody>
+  				<% @stepsHistory.each do |s| %>
+    			<tr>
+      				<td><%= s.stepDate.strftime("%-m/%-d") %></td>
+      				<td><%= s.stepAmount %></td>
+      				<td><%= ((s.stepAmount/10000.0)*100).round %> %</td>
+					<!--10000 can become goal when we that set up -->
+    			</tr>
+ 				<% end %>
+ 			</tbody>
+		</table>
+		<br>	
+	</center>
+</section>
