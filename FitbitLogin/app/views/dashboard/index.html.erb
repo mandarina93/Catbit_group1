@@ -3,23 +3,20 @@
     <ul data-role="listview">
         <li>
             <%= link_to steps_path do%>
-            <h1>Steps</h1>
-            <%= image_tag "shoeprints.png" %>
-            <p>Needs to be steps for today</p>
+			<%= image_tag "shoeprints.png" %>
+            <h1>Steps &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <%=@stepToday %></h1>
             <% end %>
         </li>
         <li>
             <%= link_to distances_path do%>
-            <h1>Miles</h1>
-            <%= image_tag "location.png" %>
-            <p>You have completed 33% of your distance goal!</p>
+			<%= image_tag "location.png" %>
+            <h1>Miles &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <%=@distanceToday %></h1>
             <% end %>
         </li>
         <li>
             <%= link_to calories_path do%>
-            <h1>Calories</h1>
-            <%= image_tag "flame.png" %>
-            <p>You have completed 56% of your Calories goal!</p>
+			<%= image_tag "flame.png" %>
+            <h1>Calories &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <%=@calorieToday %></h1>
             <% end %>
         </li>
         <li>
