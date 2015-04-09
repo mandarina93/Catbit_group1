@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20150407211316) do
     t.integer  "goalName"
     t.integer  "timeFrame"
     t.integer  "goalAmount"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

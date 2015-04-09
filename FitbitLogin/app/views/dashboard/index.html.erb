@@ -4,19 +4,19 @@
         <li>
             <%= link_to steps_path do%>
 			<%= image_tag "shoeprints.png" %>
-            <h1>Steps &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <%=@stepToday %></h1>
+            <h1><%=@stepToday %> &nbsp Steps</h1>
             <% end %>
         </li>
         <li>
             <%= link_to distances_path do%>
 			<%= image_tag "location.png" %>
-            <h1>Miles &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <%=@distanceToday %></h1>
+            <h1><%=@distanceToday %>&nbsp Miles</h1>
             <% end %>
         </li>
         <li>
             <%= link_to calories_path do%>
 			<%= image_tag "flame.png" %>
-            <h1>Calories &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <%=@calorieToday %></h1>
+            <h1><%=@calorieToday %>&nbsp Calories</h1>
             <% end %>
         </li>
         <li>
