@@ -1,14 +1,15 @@
 <%= render file:"/app/views/layouts/header.html" %>
+<!-- render goals -->
 <section>
   <center>
     <h1>GOALS</h1>
 
-    <form method="post" action="?" onSubmit="return checkform();">
+    <%= form_for @goal, method: "post" do  |f| %>
       <table>
         <tr>
           <th>Select your goal:&nbsp;&nbsp;</th>
           <td>
-             <select name="goalName" id="goalName" >
+             <select name="goal[goalName]" id="goal_goalName" >
                <option value="0" >Steps</option>
                <option value="1" >Calories</option>
                <option value="2" >Distance</option>
@@ -19,7 +20,7 @@
           <tr>
             <th>Select your time frame:&nbsp;&nbsp;</th>
             <td>
-               <select name="timeFrame" id="timeFrame" >
+               <select name="goal[timeFrame]" id="goal[timeFrame]" >
                  <option value="0" >Daily</option>
                  <option value="1" >Weekly</option>
                  <option value="2" >Monthly</option>
@@ -29,7 +30,9 @@
 
           <tr>
             <th class="required">Select the amount:&nbsp;&nbsp;</th>
-            <td><input type="number" name="goalAmount"> </td>
+            <td>
+              <%= f.number_field :goalAmount %> 
+            </td>
           </tr>
 
           <tr>
@@ -40,6 +43,6 @@
           </tr>
 
         </table>
-    </form>
+    <% end %>
   </center>
 </section>

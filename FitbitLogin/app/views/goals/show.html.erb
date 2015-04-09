@@ -1,5 +1,9 @@
-<p id="notice"><%= notice %></p>
+<%= render file:"/app/views/layouts/header.html" %>
 
+<center>
+<br><br><br><br><br>
+
+<p id="notice"><%= notice %></p>
 <p>
   <strong>Goalname:</strong>
   <%= @goal.goalName %>
@@ -15,5 +19,7 @@
   <%= @goal.goalAmount %>
 </p>
 
-<%= link_to 'Edit', edit_goal_path(@goal) %> |
-<%= link_to 'Back', goals_path %>
+<div class="button">
+	<%= link_to "Home", dashboard_index_path %>
+</div>
+</center>

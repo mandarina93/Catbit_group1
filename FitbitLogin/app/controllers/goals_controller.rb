@@ -5,11 +5,14 @@ class GoalsController < ApplicationController
   # GET /goals.json
   def index
     @name = current_user.name
+    @goals= current_user.goals
+    @goal = Goal.new
   end
 
   # GET /goals/1
   # GET /goals/1.json
   def show
+    @name = current_user.name
   end
 
   # GET /goals/new
