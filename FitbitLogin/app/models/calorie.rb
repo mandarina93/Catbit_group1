@@ -11,7 +11,9 @@ class Calorie < ActiveRecord::Base
 	def self.refresh(user, client)
 	  Calorie.where(user_id: user).find_each do |x|
 		info = client.activities_on_date(x.calorieDate)
-		x.update_attribute(:calorieOut, info["summary"]["caloriesOut"])
+		if(x.calorieDate != Date.today)
+			x.update_attribute(:calorieOut, info["summary"]["caloriesOut"])
+		end
 	  end
 	end
 end

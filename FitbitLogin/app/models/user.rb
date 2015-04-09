@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 	has_many :steps
 	has_many :calories
 	has_many :distances
+	has_many :goals
 
 	def self.from_omniauth(auth)
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
