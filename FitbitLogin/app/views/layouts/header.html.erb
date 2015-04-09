@@ -3,9 +3,9 @@
 		<div id="menuicon">
 			<%= image_tag "menu.png" %>
 			<ul class="topnav">
-					<li><%= link_to "Home", dashboard_index_path %></li> <br>
-					<li>Profile</li> <br>
-					<li><%= link_to "Goals", goals_path %></li> <br>
+					<li><div class="link"> <%= link_to "Home", dashboard_index_path %> 	</div><span class="icon"></span></li><br>
+					<!--<li><div class="link"> Profile	</div><span class="icon"></span></li><br>-->
+					<li><div class="link"> <%= link_to "Goals", goals_path %>	</div><span class="icon"></span></li><br>
 			</ul>
 		</div>
 	</div>
@@ -20,3 +20,9 @@
 		<%= link_to image_tag("signout.png"), sessions_destroy_path, :method => :delete  %>
 	</div>
 </header>
+
+<script>
+	$(function(){
+	    $('#side-menu').slideMenu();
+	});
+</script>
