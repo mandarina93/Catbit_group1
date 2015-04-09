@@ -14,4 +14,12 @@ class Distance < ActiveRecord::Base
 		x.update_attribute(:distanceAmount, info["summary"]["distances"][0]["distance"])
 	  end
 	end
+	
+	def self.goal_data(user)
+		if (Goal.where(user_id: user, goalName: 2).blank?)
+			data = {"goalAmount" => 3}
+		else
+			data = Goal.where(user_id: user, goalName: 2).take!
+		end
+	end
 end

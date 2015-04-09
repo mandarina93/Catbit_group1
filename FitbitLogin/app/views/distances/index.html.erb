@@ -19,7 +19,7 @@
           <tr>
               <td><%= d.distanceDate.strftime("%-m/%-d") %></td>
               <td><%= d.distanceAmount %></td>
-              <td><%= ((d.distanceAmount/3.0)*100).round %> %</td>
+              <td><%= ((d.distanceAmount/@distanceGoal)*100).round %> %</td>
           <!--3 miles can become goal when we that set up -->
           </tr>
         <% end %>

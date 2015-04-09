@@ -16,4 +16,12 @@ class Calorie < ActiveRecord::Base
 		end
 	  end
 	end
+	
+	def self.goal_data(user)
+		if (Goal.where(user_id: user, goalName: 1).blank?)
+			data = {"goalAmount" => 2000}
+		else
+			data = Goal.where(user_id: user, goalName: 1).take!
+		end
+	end
 end

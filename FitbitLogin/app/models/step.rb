@@ -15,4 +15,11 @@ class Step < ActiveRecord::Base
 	  end
 	end
 	
+	def self.goal_data(user)
+		if (Goal.where(user_id: user, goalName: 0).blank?)
+			data = {"goalAmount" => 10000}
+		else
+			data = Goal.where(user_id: user, goalName: 0).take!
+		end
+	end
 end

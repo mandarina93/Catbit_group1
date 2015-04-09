@@ -6,13 +6,16 @@ class DistancesController < ApplicationController
   def index
 	client = user_client
 	#todays information
+	user = current_user.id
 	user_activities = client.activities_on_date 'today'
-	distance = Distance.distance_data(user_activities["summary"], current_user.id)
-	Distance.refresh(current_user.id, client)
+	distance = Distance.distance_data(user_activities["summary"], user)
+	Distance.refresh(user, client)
 
 	@name = current_user.name
 	@distanceDaily = distance.distanceAmount
 	@distanceHistory = Distance.order(distanceDate: :desc)
+	data = Distance.goal_data(user)
+	@distanceGoal = data["goalAmount"].to_f
   end
 
   # GET /distances/1

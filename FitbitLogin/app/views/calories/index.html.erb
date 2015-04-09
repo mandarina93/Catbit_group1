@@ -19,7 +19,7 @@
           <tr>
               <td><%= c.calorieDate.strftime("%-m/%-d") %></td>
               <td><%= c.calorieOut %></td>
-              <td><%= ((c.calorieOut/2000.0)*100).round %> %</td>
+              <td><%= ((c.calorieOut/@calorieGoal)*100).round %> %</td>
           <!--2000 can become goal when we that set up -->
           </tr>
         <% end %>

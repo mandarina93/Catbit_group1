@@ -6,13 +6,16 @@ class StepsController < ApplicationController
   def index
     client = user_client
 	#todays information
+	user = current_user.id
 	user_activities = client.activities_on_date 'today'
-	step = Step.step_data(user_activities["summary"], current_user.id)
-	Step.refresh(current_user.id, client)
+	step = Step.step_data(user_activities["summary"], user)
+	Step.refresh(user, client)
 
 	@name = current_user.name
 	@stepsDaily = step.stepAmount
 	@stepsHistory = Step.order(stepDate: :desc)
+	data = Step.goal_data(user)
+	@stepGoal = data["goalAmount"].to_f
   end
 
   # GET /steps/1

@@ -6,13 +6,16 @@ class CaloriesController < ApplicationController
   def index
     client = user_client
 	#todays information
+	user = current_user.id
 	user_activities = client.activities_on_date 'today'
-	calorie = Calorie.calorie_data(user_activities["summary"], current_user.id)
-	Calorie.refresh(current_user.id, client)
+	calorie = Calorie.calorie_data(user_activities["summary"], user)
+	Calorie.refresh(user, client)
 	
     @name = current_user.name
     @caloriesDaily = calorie.calorieOut
     @caloriesHistory = Calorie.order(calorieDate: :desc)
+	data = Calorie.goal_data(user)
+	@calorieGoal = data["goalAmount"].to_f
   end
 
   # GET /calories/1
