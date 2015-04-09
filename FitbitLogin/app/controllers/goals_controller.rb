@@ -12,7 +12,24 @@ class GoalsController < ApplicationController
   # GET /goals/1
   # GET /goals/1.json
   def show
+	user_id = current_user.id
     @name = current_user.name
+	if(@goal.goalName == 0)
+		@goalType = "Steps"
+	else if (@goal.goalName == 1)
+		@goalType = "Calories"
+	else
+		@goalType = "Miles"
+	end
+	end
+	if(@goal.timeFrame == 0)
+		@time = "Daily"
+	else if (@goal.goalName == 1)
+		@time = "Weekly"
+	else
+		@time = "Monthly"
+	end
+	end
   end
 
   # GET /goals/new
@@ -27,17 +44,9 @@ class GoalsController < ApplicationController
   # POST /goals
   # POST /goals.json
   def create
-    @goal = Goal.new(goal_params)
-
-    respond_to do |format|
-      if @goal.save
-        format.html { redirect_to @goal, notice: 'Goal was successfully created.' }
-        format.json { render :show, status: :created, location: @goal }
-      else
-        format.html { render :new }
-        format.json { render json: @goal.errors, status: :unprocessable_entity }
-      end
-    end
+    @goal = Goal.goal_data(goal_params, current_user.id)
+	@goal.update(goal_params)
+    redirect_to @goal, notice: 'Goal was successfully updated.'
   end
 
   # PATCH/PUT /goals/1

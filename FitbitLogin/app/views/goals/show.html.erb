@@ -4,21 +4,16 @@
 <br><br><br><br><br>
 
 <p id="notice"><%= notice %></p>
+
 <p>
-  <strong>Goalname:</strong>
-  <%= @goal.goalName %>
+  <strong><%= @goalType %></strong>
 </p>
 
 <p>
-  <strong>Timeframe:</strong>
-  <%= @goal.timeFrame %>
-</p>
 
-<p>
-  <strong>Goalamount:</strong>
-  <%= @goal.goalAmount %>
+  <strong>Goals of <%= @goal.goalAmount %> Per <%= @time %></strong>
+  
 </p>
-
 <div class="button">
 	<%= link_to "Home", dashboard_index_path %>
 </div>
