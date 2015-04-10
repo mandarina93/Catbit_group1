@@ -24,5 +24,26 @@
 	-webkit-box-shadow:0px 0px 2px #d9d5d5, inset 0px 0px 20px #ffffff; 
 	-moz-box-shadow: 0px 0px 2px #d9d5d5,  inset 0px 0px 20px #ffffff;  
 	box-shadow:0px 0px 2px #d9d5d5, inset 0px 0px 20px #ffffff;  
-  
- }
+}
+
+ table.goalsTable th, table.goalsTable td{
+	border-bottom:1px solid #ddd;
+	text-align:left;
+	padding:5px;
+	vertical-align:top;
+}
+table.goalsTable th{
+	font-size:15px;
+	//text-transform:uppercase;
+	border-left:1px solid #ddd;
+	border-bottom:3px solid #aaa;
+}
+table.goalsTable th:nth-child(1){
+	border-left:none;
+}
+table.goalsTable td:nth-child(even){
+	background-color: #f0f0f0;
+}
+table.goalsTable th:nth-child(4), table.goalsTable td:nth-child(4){
+	display:none;
+}
