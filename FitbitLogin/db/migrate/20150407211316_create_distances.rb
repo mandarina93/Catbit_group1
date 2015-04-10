@@ -1,7 +1,7 @@
 class CreateDistances < ActiveRecord::Migration
   def change
     create_table :distances do |t|
-      t.integer :distanceAmount
+      t.float :distanceAmount
       t.date :distanceDate
 	  t.integer :user_id
 	  
