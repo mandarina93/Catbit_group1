@@ -1,0 +1,46 @@
+rake db:drop
+
+rake db:migrate
+
+rails dbconsole
+
+Once you are in the dbconsole copy and paste all insert items then do what is underneath this.
+
+insert into users values( 1, 'Jane', '2015-04-09 22:40:20', '2015-04-09 22:40:20', '5af33d25fcb7166a4a636b269f52bf09', '27ce78f51ad338328dd8567dd09c3356', 'fitbit', '387DTX');
+insert into steps values( 1, '2015-03-30', 3742, 1, '2015-04-09 23:11:18', '2015-04-09 23:11:22');
+insert into steps values( 2, '2015-03-31', 0, 1, '2015-04-09 23:12:27', '2015-04-09 23:12:27');
+insert into steps values( 3, '2015-04-01', 15463, 1, '2015-04-09 23:13:35', '2015-04-09 23:13:35'); 
+insert into steps values( 4, '2015-04-02', 5929, 1, '2015-04-09 23:14:37', '2015-04-09 23:14:44');
+insert into steps values( 5, '2015-04-03', 5358, 1, '2015-04-09 23:15:58', '2015-04-09 23:16:02');
+insert into steps values( 6, '2015-04-04', 10625, 1, '2015-04-09 23:17:59', '2015-04-09 23:18:02');
+insert into steps values( 7, '2015-04-05', 0, 1, '2015-04-09 23:17:59', '2015-04-09 23:18:02');
+insert into steps values( 8, '2015-04-06', 0, 1, '2015-04-09 23:17:59', '2015-04-09 23:18:02');
+insert into steps values( 9, '2015-04-07', 0, 1, '2015-04-09 23:17:59', '2015-04-09 23:18:02');
+insert into steps values( 10, '2015-04-08', 0, 1, '2015-04-09 23:17:59', '2015-04-09 23:18:02');
+insert into steps values( 11, '2015-04-09', 12, 1, '2015-04-09 23:17:59', '2015-04-09 23:18:02');
+insert into distances values( 1, 1, '2015-03-30', 1, '2015-04-09 23:17:59', '2015-04-09 23:18:02');
+insert into distances values( 2, 0, '2015-03-31', 1, '2015-04-09 23:17:59', '2015-04-09 23:18:02');
+insert into distances values( 3, 7, '2015-04-01', 1, '2015-04-09 23:17:59', '2015-04-09 23:18:02');
+insert into distances values( 4, 2, '2015-04-02', 1, '2015-04-09 23:17:59', '2015-04-09 23:18:02');
+insert into distances values( 5, 2, '2015-04-03', 1, '2015-04-09 23:17:59', '2015-04-09 23:18:02');
+insert into distances values( 6, 4, '2015-04-04', 1, '2015-04-09 23:17:59', '2015-04-09 23:18:02');
+insert into distances values( 7, 0, '2015-04-05', 1, '2015-04-09 23:17:59', '2015-04-09 23:18:02');
+insert into distances values( 8, 0, '2015-04-06', 1, '2015-04-09 23:17:59', '2015-04-09 23:18:02');
+insert into distances values( 9, 0, '2015-04-07', 1, '2015-04-09 23:17:59', '2015-04-09 23:18:02');
+insert into distances values( 10, 0, '2015-04-08', 1, '2015-04-09 23:17:59', '2015-04-09 23:18:02');
+insert into distances values( 11, 0, '2015-04-09', 1, '2015-04-09 23:17:59', '2015-04-09 23:18:02');
+insert into calories values( 1, '2015-03-30', NULL, 1708, 1, '2015-04-09 23:17:59', '2015-04-09 23:18:02');
+insert into calories values( 2, '2015-03-31', NULL, 1405, 1, '2015-04-09 23:17:59', '2015-04-09 23:18:02');
+insert into calories values( 3, '2015-04-01', NULL, 2375, 1, '2015-04-09 23:17:59', '2015-04-09 23:18:02'); 
+insert into calories values( 4, '2015-04-02', NULL, 1860, 1, '2015-04-09 23:17:59', '2015-04-09 23:18:02'); 
+insert into calories values( 5, '2015-04-03', NULL, 1781, 1, '2015-04-09 23:17:59', '2015-04-09 23:18:02'); 
+insert into calories values( 6, '2015-04-04', NULL, 2163, 1, '2015-04-09 23:17:59', '2015-04-09 23:18:02');
+insert into calories values( 7, '2015-04-05', NULL, 2334, 1, '2015-04-09 23:17:59', '2015-04-09 23:18:02');
+insert into calories values( 8, '2015-04-06', NULL, 0, 1, '2015-04-09 23:17:59', '2015-04-09 23:18:02');
+insert into calories values( 9, '2015-04-07', NULL, 0, 1, '2015-04-09 23:17:59', '2015-04-09 23:18:02');
+insert into calories values( 10, '2015-04-08', NULL, 0, 1, '2015-04-09 23:17:59', '2015-04-09 23:18:02');
+insert into calories values( 11, '2015-04-09', NULL, 1034, 1, '2015-04-09 23:17:59', '2015-04-09 23:18:02');
+
+.exit
+
+run program
