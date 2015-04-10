@@ -5,7 +5,18 @@ class GoalsController < ApplicationController
   # GET /goals.json
   def index
     @name = current_user.name
-    @goals= current_user.goals
+	user = current_user.id
+	
+	goalInfo = Goal.get_goals(user)
+	@stepGoal = goalInfo[:step]
+	@calorieGoal = goalInfo[:calorie]
+	@distanceGoal = goalInfo[:distance]
+	
+	timeInfo = Goal.get_times(user)
+	@stepTime = timeInfo[:step]
+	@calorieTime = timeInfo[:calorie]
+	@distanceTime = timeInfo[:distance]
+	
     @goal = Goal.new
   end
 
@@ -16,19 +27,17 @@ class GoalsController < ApplicationController
     @name = current_user.name
 	if(@goal.goalName == 0)
 		@goalType = "Steps"
-	else if (@goal.goalName == 1)
+	elsif (@goal.goalName == 1)
 		@goalType = "Calories"
 	else
 		@goalType = "Miles"
 	end
-	end
 	if(@goal.timeFrame == 0)
 		@time = "Daily"
-	else if (@goal.goalName == 1)
+	elsif (@goal.timeFrame == 1)
 		@time = "Weekly"
 	else
 		@time = "Monthly"
-	end
 	end
   end
 
