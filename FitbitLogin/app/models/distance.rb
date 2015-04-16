@@ -1,5 +1,6 @@
 class Distance < ActiveRecord::Base
 	belongs_to :user
+	validates :distanceDate, presence: true
 	
 	def self.distance_data(data, user)
       where(user_id: user, distanceDate: Date.today).first_or_create do |distance|

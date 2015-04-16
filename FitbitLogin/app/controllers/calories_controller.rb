@@ -1,19 +1,19 @@
 class CaloriesController < ApplicationController
-  before_action :set_calory, only: [:show, :edit, :update, :destroy]
+  before_action :set_calories, only: [:show, :edit, :update, :destroy]
 
   # GET /calories
   # GET /calories.json
   def index
-    client = user_client
+        client = user_client
 	#todays information
 	user = current_user.id
 	user_activities = client.activities_on_date 'today'
 	calorie = Calorie.calorie_data(user_activities["summary"], user)
 	Calorie.refresh(user, client)
 	
-    @name = current_user.name
-    @caloriesDaily = calorie.calorieOut
-    @caloriesHistory = Calorie.order(calorieDate: :desc)
+        @name = current_user.name
+        @caloriesDaily = calorie.calorieOut
+        @caloriesHistory = Calorie.where(user_id: user).order(calorieDate: :desc)
 	data = Calorie.goal_data(user)
 	@calorieGoal = data["goalAmount"].to_f
   end
@@ -25,7 +25,7 @@ class CaloriesController < ApplicationController
 
   # GET /calories/new
   def new
-    @calory = Calory.new
+    @calories = Calory.new
   end
 
   # GET /calories/1/edit
@@ -35,15 +35,15 @@ class CaloriesController < ApplicationController
   # POST /calories
   # POST /calories.json
   def create
-    @calory = Calory.new(calory_params)
+    @calories = Calory.new(calories_params)
 
     respond_to do |format|
-      if @calory.save
-        format.html { redirect_to @calory, notice: 'Calory was successfully created.' }
-        format.json { render :show, status: :created, location: @calory }
+      if @calories.save
+        format.html { redirect_to @calories, notice: 'Calory was successfully created.' }
+        format.json { render :show, status: :created, location: @calories }
       else
         format.html { render :new }
-        format.json { render json: @calory.errors, status: :unprocessable_entity }
+        format.json { render json: @calories.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -52,12 +52,12 @@ class CaloriesController < ApplicationController
   # PATCH/PUT /calories/1.json
   def update
     respond_to do |format|
-      if @calory.update(calory_params)
-        format.html { redirect_to @calory, notice: 'Calory was successfully updated.' }
-        format.json { render :show, status: :ok, location: @calory }
+      if @calories.update(calories_params)
+        format.html { redirect_to @calories, notice: 'Calory was successfully updated.' }
+        format.json { render :show, status: :ok, location: @calories }
       else
         format.html { render :edit }
-        format.json { render json: @calory.errors, status: :unprocessable_entity }
+        format.json { render json: @calories.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -65,7 +65,7 @@ class CaloriesController < ApplicationController
   # DELETE /calories/1
   # DELETE /calories/1.json
   def destroy
-    @calory.destroy
+    @calories.destroy
     respond_to do |format|
       format.html { redirect_to calories_url, notice: 'Calory was successfully destroyed.' }
       format.json { head :no_content }
@@ -74,12 +74,12 @@ class CaloriesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_calory
-      @calory = Calory.find(params[:id])
+    def set_calories
+      @calories = Calory.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def calory_params
-      params.require(:calory).permit(:calorieDate, :calorieIn, :calorieOut)
+    def calories_params
+      params.require(:calories).permit(:calorieDate, :calorieIn, :calorieOut)
     end
 end

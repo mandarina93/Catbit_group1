@@ -13,7 +13,7 @@ class DistancesController < ApplicationController
 
 	@name = current_user.name
 	@distanceDaily = distance.distanceAmount
-	@distanceHistory = Distance.order(distanceDate: :desc)
+	@distanceHistory = Distance.where(user_id: user).order(distanceDate: :desc)
 	data = Distance.goal_data(user)
 	@distanceGoal = data["goalAmount"].to_f
   end

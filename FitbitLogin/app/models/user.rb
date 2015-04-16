@@ -1,10 +1,14 @@
 class User < ActiveRecord::Base
+	validates :uid, presence: true
+	validates :oauthToken, presence: true
+	validates :oauthSecret, presence: true
+	
 	has_many :authorizations
 	has_many :steps
 	has_many :calories
 	has_many :distances
 	has_many :goals
-
+	
 	def self.from_omniauth(auth)
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
         user.provider = auth.provider

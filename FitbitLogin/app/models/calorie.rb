@@ -1,5 +1,6 @@
 class Calorie < ActiveRecord::Base
 	belongs_to :user
+	validates :calorieDate, presence: true
 	
 	def self.calorie_data(data, user)
       where(user_id: user, calorieDate: Date.today).first_or_create do |calorie|

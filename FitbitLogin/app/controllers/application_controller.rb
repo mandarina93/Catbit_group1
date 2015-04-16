@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
 
   def user_client
     #@steps = Step.all
+	#@client ||= Fitbit::Client if doesnt exist create
     consumerKey = Rails.configuration.Consumer_Key
     consumerSecret = Rails.configuration.Consumer_Secret
     #get values from table in users

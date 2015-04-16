@@ -13,7 +13,7 @@ class StepsController < ApplicationController
 
 	@name = current_user.name
 	@stepsDaily = step.stepAmount
-	@stepsHistory = Step.order(stepDate: :desc)
+	@stepsHistory = Step.where(user_id: user).order(stepDate: :desc)
 	data = Step.goal_data(user)
 	@stepGoal = data["goalAmount"].to_f
   end

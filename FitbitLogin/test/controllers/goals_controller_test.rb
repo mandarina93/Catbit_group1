@@ -1,10 +1,6 @@
 require 'test_helper'
 
 class GoalsControllerTest < ActionController::TestCase
-  setup do
-    @goal = goals(:one)
-  end
-
   test "should get index" do
     get :index
     assert_response :success
@@ -37,13 +33,5 @@ class GoalsControllerTest < ActionController::TestCase
   test "should update goal" do
     patch :update, id: @goal, goal: { goalAmount: @goal.goalAmount, goalName: @goal.goalName, timeFrame: @goal.timeFrame }
     assert_redirected_to goal_path(assigns(:goal))
-  end
-
-  test "should destroy goal" do
-    assert_difference('Goal.count', -1) do
-      delete :destroy, id: @goal
-    end
-
-    assert_redirected_to goals_path
   end
 end
