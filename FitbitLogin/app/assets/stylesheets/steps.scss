@@ -17,6 +17,16 @@ body {
 	color:black;
 	font-size:100%;
 	line-height: 18px;
+	text-align: center;
+}
+
+
+.odd{
+	
+}
+.even{
+	background-color: #eeeeee; /* non-RGBA fallback  */
+    background-color: rgba(0,0,0,.04);
 }
 
 

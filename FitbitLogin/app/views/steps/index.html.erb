@@ -16,7 +16,7 @@
  			</thead>
  			<tbody>
   				<% @stepsHistory.each do |s| %>
-    			<tr>
+    			<tr class="<%= cycle('odd', 'even') -%>">
       				<td><%= s.stepDate.strftime("%-m/%-d") %></td>
       				<td><%= s.stepAmount %></td>
       				<td><%= ((s.stepAmount/@stepGoal)*100).round %> %</td>

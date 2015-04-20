@@ -16,7 +16,7 @@
       </thead>
       <tbody>
           <% @caloriesHistory.each do |c| %>
-          <tr>
+          <tr class="<%= cycle('odd', 'even') -%>">
               <td><%= c.calorieDate.strftime("%-m/%-d") %></td>
               <td><%= c.calorieOut %></td>
               <td><%= ((c.calorieOut/@calorieGoal)*100).round %> %</td>

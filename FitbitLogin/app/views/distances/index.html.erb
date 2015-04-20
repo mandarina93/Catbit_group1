@@ -16,7 +16,7 @@
       </thead>
       <tbody>
           <% @distanceHistory.each do |d| %>
-          <tr>
+          <tr class="<%= cycle('odd', 'even') -%>">
               <td><%= d.distanceDate.strftime("%-m/%-d") %></td>
               <td><%= d.distanceAmount %></td>
               <td><%= ((d.distanceAmount/@distanceGoal)*100).round %> %</td>
