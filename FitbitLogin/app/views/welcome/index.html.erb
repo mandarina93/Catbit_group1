@@ -30,9 +30,11 @@
 		<center>
 			<h1 id="welcome">Catbit Welcomes You</h1>
 
-			<div class="button">			
-				<%= link_to "Login with Fitbit", '/auth/fitbit' %>
+			<%= link_to '/auth/fitbit' do %>
+			<div class="button">
+				Login with Fitbit			
 			</div>
+			<% end %>
 		</center>
 	</section>
 

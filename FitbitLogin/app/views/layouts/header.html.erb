@@ -3,9 +3,23 @@
 		<div id="menuicon">
 			<%= image_tag "menu.png" %>
 			<ul class="topnav">
-					<li><div class="link"> <%= link_to "Home", dashboard_index_path %> 	</div><span class="icon"></span></li><br>
+					<li>
+						<%= link_to dashboard_index_path do %>
+						<div class="menu_link"> 
+							Home	 	
+						</div>
+						<span class="icon"></span>
+						<% end %>
+					</li><br>
 					<!--<li><div class="link"> Profile	</div><span class="icon"></span></li><br>-->
-					<li><div class="link"> <%= link_to "Goals", goals_path %>	</div><span class="icon"></span></li><br>
+					<li>
+						<%= link_to goals_path do %>
+						<div class="menu_link"> 
+							Goals		
+						</div>
+						<span class="icon"></span>
+						<% end %>
+					</li><br>
 			</ul>
 		</div>
 	</div>

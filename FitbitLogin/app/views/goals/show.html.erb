@@ -14,7 +14,10 @@
   <strong>Goals of <%= @goal.goalAmount %> Per <%= @time %></strong>
   
 </p>
+
+<%= link_to dashboard_index_path do %>
 <div class="button">
-	<%= link_to "Home", dashboard_index_path %>
+	Home
 </div>
+<% end %>
 </center>
