@@ -10,11 +10,12 @@ class Calorie < ActiveRecord::Base
 	end
 	
 	def self.refresh(user, client)
-	  Calorie.where(user_id: user).find_each do |x|
+	  Calorie.where(user_id: user).order(calorieDate: :desc).each_with_index do |x, i|
 		info = client.activities_on_date(x.calorieDate)
 		if(x.calorieDate != Date.today)
 			x.update_attribute(:calorieOut, info["summary"]["caloriesOut"])
 		end
+		break if (i==3)
 	  end
 	end
 	

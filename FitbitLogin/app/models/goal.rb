@@ -1,6 +1,7 @@
 class Goal < ActiveRecord::Base
 	belongs_to :user
 	validates :goalName, presence: true
+	validates :goalAmount, numericality: { greater_than_or_equal_to: 1 }
 	
 	def self.goal_data(data, user)
       where(user_id: user, goalName: data["goalName"]).first_or_create do |goal|

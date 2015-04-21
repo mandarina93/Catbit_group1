@@ -10,9 +10,10 @@ class Distance < ActiveRecord::Base
 	end
 	
 	def self.refresh(user, client)
-	  Distance.where(user_id: user).find_each do |x|
+	  Distance.where(user_id: user).order(distanceDate: :desc).each_with_index do |x, i|
 		info = client.activities_on_date(x.distanceDate)
 		x.update_attribute(:distanceAmount, info["summary"]["distances"][0]["distance"])
+		break if (i==3)
 	  end
 	end
 	
