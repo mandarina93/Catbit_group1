@@ -5,17 +5,18 @@ class StepsController < ApplicationController
   # GET /steps.json
   def index
     client = user_client
-	#todays information
-	user = current_user.id
-	user_activities = client.activities_on_date 'today'
-	step = Step.step_data(user_activities["summary"], user)
-	Step.refresh(user, client)
 
-	@name = current_user.name
-	@stepsDaily = step.stepAmount
-	@stepsHistory = Step.where(user_id: user).order(stepDate: :desc)
-	data = Step.goal_data(user)
-	@stepGoal = data["goalAmount"].to_f
+	  #todays information
+	  user = current_user.id
+	  user_activities = client.activities_on_date 'today'
+	  step = Step.step_data(user_activities["summary"], user)
+	  Step.refresh(user, client)
+
+	  @name = current_user.name
+	  @stepsDaily = step.stepAmount
+	  @stepsHistory = Step.where(user_id: user).order(stepDate: :desc)
+	  data = Step.goal_data(user)
+	  @stepGoal = data["goalAmount"].to_f
   end
 
   # GET /steps/1

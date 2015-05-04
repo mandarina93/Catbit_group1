@@ -11,12 +11,13 @@ class SessionsController < ApplicationController
 	   session[:user_id] = user.id
 	   client = user_client
 	   User.update_name(user.id, client)
-	   #throw user.inspect #- rails console is also a debugging option
 	   redirect_to dashboard_index_path
   end
 
   def destroy
 	   session[:user_id] = nil
-       redirect_to root_path
+     redirect_to root_path
   end
+
+  #throw user.inspect #- rails console is also a debugging option
 end
